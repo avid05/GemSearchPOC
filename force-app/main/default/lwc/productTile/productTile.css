@@ -1,0 +1,20 @@
+.product-tile {
+    border: 2px solid #421dea;
+    background-color: #e65918;
+    border-radius: .25rem;
+    display: block;
+    padding-bottom: 1px;
+  }
+
+  .product-data{
+    padding:3px;
+  }
+
+  .product-image{
+    height: 135px;
+    width:120px;
+  }
+
+  .product-tile-body {
+    background: linear-gradient(180deg, rgba(255,255,255,1) 80%, #fae8d2 100%);
+  }

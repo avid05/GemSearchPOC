@@ -1,0 +1,39 @@
+<template>
+<lightning-card title="">
+    <div class="slds-align_absolute-center">
+        <template if:true={isEnablePrev}>
+            <lightning-button variant="brand" label="Back to Product Selection" onclick={handlePrev} class="slds-button slds-button_brand"></lightning-button>
+        </template>
+         
+        <template if:true={isEnableNext}>
+            <lightning-button label="Add to Order" variant="brand" onclick={handleNext} class="slds-button slds-button_brand"></lightning-button>
+        </template>
+    </div>
+    
+    <template if:true={isStepOne}>
+        <lightning-layout multiple-rows="true" pull-to-boundary="small">
+            <lightning-layout-item size="7" class="slds-var-p-around_x-small">
+                <c-product-list oppid={recordId} onproductselected={hanldeProductSelectionChange}></c-product-list>
+            </lightning-layout-item>
+            <lightning-layout-item size="5" class="slds-var-p-around_x-small">
+                <c-product-map></c-product-map>
+            </lightning-layout-item>
+       </lightning-layout>
+    </template>
+    <template if:true={isStepTwo}>
+        <c-order-product-list oppid={recordId}></c-order-product-list> 
+    </template>
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading" variant="base" ></lightning-spinner>
+    </template>
+    <div class="slds-align_absolute-center">
+        <template if:true={isEnablePrev}>
+            <lightning-button variant="brand" label="Back to Product Selection" onclick={handlePrev} class="slds-button slds-button_brand"></lightning-button>
+        </template>
+         
+        <template if:true={isEnableNext}>
+            <lightning-button label="Add to Order" variant="brand" onclick={handleNext} class="slds-button slds-button_brand"></lightning-button>
+        </template>
+    </div>
+</lightning-card>
+</template>

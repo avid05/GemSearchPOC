@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="" >
+       <lightning-card title="Products Added by You" >
+        <template if:true={hasnormalProducts}>
+            <lightning-datatable
+                    key-field="id"
+                    data={normalproducts}
+                    hide-checkbox-column
+                    onrowaction={handleRowAction}
+                    show-row-number-column
+                    columns={ncolumns}>
+            </lightning-datatable>
+        </template>
+       </lightning-card>
+       <template if:true={hasChargeProducts}>
+       <lightning-card title="Products Added Automatically" >
+                    <lightning-datatable
+                    key-field="id"
+                    data={chargeproducts}
+                    hide-checkbox-column
+                    onrowaction={handleRowAction}
+                    show-row-number-column
+                    columns={ccolumns}>
+            </lightning-datatable>
+       </lightning-card>
+    </template>
+     
+        <template if:false={products}>
+            No product found
+        </template>
+    </lightning-card>
+<template if:true={isLoading}>
+    <lightning-spinner alternative-text="Loading" variant="base" ></lightning-spinner>
+</template>
+</template>

@@ -1,0 +1,11 @@
+.product-tile {
+    border: 2px solid #421dea;
+    border-radius: .25rem;
+    display: block;
+    padding-bottom: 1px;
+	  padding:8px;
+  }
+  .product-silhouette {
+    height: 150px;
+    width:140px;
+  }
